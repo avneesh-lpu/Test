@@ -1,9 +1,13 @@
 package com.example.ambikesh.test;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -46,6 +50,14 @@ public class MyAdapter extends BaseAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-      return null;
+      Activity at = (Activity) ct;
+      View v = at.getLayoutInflater().inflate(R.layout.my_layout,null);
+      TextView a = v.findViewById(R.id.tv1);
+      TextView b = v.findViewById(R.id.tv2);
+      ImageView i = v.findViewById(R.id.iv);
+      i.setImageResource((int)al.get(position));
+      a.setText("Hello");
+      b.setText("Vishnu Here..!");
+      return v;
     }
 }
